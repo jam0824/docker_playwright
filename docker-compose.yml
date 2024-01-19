@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  playwright:
+    build: ./docker/playwright
+    container_name: playwright
+    tty: true
+    ports:
+      - "9323:9323"
+    volumes:
+      - ./mount:/app
+      - /app/node_modules
+    
+    
