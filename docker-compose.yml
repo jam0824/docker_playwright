@@ -7,8 +7,9 @@ services:
     tty: true
     ports:
       - "9323:9323"
+      - "8010:8010"
     volumes:
       - ./mount:/app
       - /app/node_modules
-    
-    
+    environment:
+      - DISPLAY=:10

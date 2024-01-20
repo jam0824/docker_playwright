@@ -5,6 +5,7 @@ test('ラクスのサイトが表示されているか', async ({ page }) => {
     // Google検索エンジンを開く
     await page.goto('https://www.google.com/');
     // 検索欄に「株式会社ラクス」を入力
+    await page.waitForTimeout(30000);
     await page.getByRole('combobox', { name: '検索' }).click();
     await page.getByRole('combobox', { name: '検索' }).fill('株式会社ラクス');
     // Enterを押す
