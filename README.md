@@ -40,6 +40,8 @@ https://www.docker.com/ja-jp/
 以下で仮想ディスプレイを立ち上げます。
 ```./start.sh```
 
+> テスト実行時のブラウザが動く様子を見なくていい場合は3.と4.は必要はありません
+
 ## 4.ホスト側のブラウザで仮想ディスプレイを見る
 ホスト側（dockerコンテナではなく、いつものパソコンのほう）のブラウザのアドレスに以下を入力しenterを押す。
 
@@ -80,3 +82,16 @@ dockerコンテナのほうで、以下を入力すればplaywrightが実行さ�
 ```docker-compose down```
 
 またdockerを立ち上げたいときは`dockerコンテナの立ち上げとテスト実行準備`から行ってください。
+
+# テスト実行中のブラウザの様子を見ず、ただテスト実行したい場合
+## dockerコンテナに入らずにテスト実行
+以下を実行すると、dockerコンテナに入らずに(docker exec -it playwright bashを実行せずに)テスト実行ができます。
+
+```docker exec playwright ./no_display_test.sh```
+
+## dockerコンテナに入って、画面表示なしにテスト実行
+dockerコンテナの中で以下を実行すると、特にテスト実行中のブラウザの動く様子を見ることなしに（ヘッドレスの状態で）テスト実行をします。
+
+```./no_display_test.sh```
+
+> shの中身は`xvfb-run npx playwright test`を実行しているだけです。
