@@ -61,3 +61,22 @@ dockerコンテナのほうで、以下を入力すればplaywrightが実行さ�
 ```localhost:9323```
 
 または、`mount`フォルダが同期しているので`playwright-report`フォルダの`index.html`を直接開いても結果を見ることができます。
+
+# テストを修正する
+`mount`フォルダとdockerの`/app`フォルダの中身は同期されているため、**dockerを起動している状態で、ホスト側でリアルタイムで修正できます。**
+
+修正が終わったら、再度`npx playwright test --headed`を実行してください。（ブラウザを表示しなくていいときは`--headed`をとってください）
+
+
+# dockerコンテナを終了する
+## 1. dockerコンテナから抜ける
+以下でdockerコンテナから抜けることができます。
+
+```exit```
+
+## 2. dockerコンテナを終了する
+以下でdockerコンテナを終了させることができます。
+
+```docker-compose down```
+
+またdockerを立ち上げたいときは`dockerコンテナの立ち上げとテスト実行準備`から行ってください。
