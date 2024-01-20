@@ -29,7 +29,7 @@ https://www.docker.com/ja-jp/
 ## 1. dockerコンテナを立ち上げる
 以下でdockerコンテナを立ち上げます。
 
-```docker-component up -d```
+```docker-compose up -d```
 
 ## 2.dockerコンテナの中に入る
 以下でdockerコンテナの中に入ります。
