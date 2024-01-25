@@ -5,4 +5,4 @@ WORKDIR /app
 
 # 必要なパッケージをインストール
 RUN npm update -g npm
-RUN npm init -y playwright typescript ts-node && npm i -D -y @playwright/test
+RUN npm init -y && npm i -y @playwright/test
